@@ -1,6 +1,6 @@
 ---
 title: "The AI Tsunami: Reinventing Education for the Age of AI"
-description: "A four-part series exploring how higher education must transform in response to AI—from assessment to precision learning to institutional mission."
+description: "A six-part series exploring how higher education must transform in response to AI—from assessment to precision learning to institutional mission."
 type: "essay"
 topics: ["AI", "higher education", "assessment", "institutional change"]
 publishedAt: 2025-09-18
@@ -8,7 +8,7 @@ updatedAt: 2026-01-15
 status: "evergreen"
 ---
 
-A four-part series published in <a href="https://er.educause.edu/" target="_blank" rel="noopener noreferrer">EDUCAUSE Review</a>, co-authored with Paul LeBlanc, Mihnea Moldoveanu, George Siemens, Tanya Gamby, and David Kil.
+A six-part series published in <a href="https://er.educause.edu/" target="_blank" rel="noopener noreferrer">EDUCAUSE Review</a>, co-authored with Paul LeBlanc, Mihnea Moldoveanu, George Siemens, Tanya Gamby, and David Kil.
 
 The series explores how higher education must fundamentally transform in the age of AI—not just adopting new tools, but rethinking assessment, pedagogy, and institutional purpose.
 
@@ -31,3 +31,7 @@ Moving beyond personalization as content branching toward precision learning—a
 **<a href="https://er.educause.edu/articles/2026/1/the-university-the-chatbot-and-a-call-for-a-new-mission-for-higher-education" target="_blank" rel="noopener noreferrer">Part 4: The University, the Chatbot, and a New Mission</a>** — January 2026
 
 If AI can deliver content and answer questions, what remains uniquely human about the university? A call for institutions to rediscover their purpose.
+
+**Part 5** — Coming soon
+
+**Part 6** — Coming soon
