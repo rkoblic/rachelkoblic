@@ -2,7 +2,7 @@
 title: "Getting Our Feet Wet: AI in Higher Education"
 description: "A keynote exploring how institutions can navigate AI's transformation of teaching, learning, and quality assurance."
 type: "talk"
-topics: ["AI", "higher education", "institutional change"]
+topics: ["AI", "higher education"]
 publishedAt: 2025-12-04
 updatedAt: 2025-12-04
 status: "evergreen"

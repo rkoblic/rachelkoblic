@@ -2,7 +2,7 @@
 title: "2U's Learning Experience Framework"
 description: "Introducing an evidence-based approach to learning design, distilling decades of research into three elements: Feel, Do, and Think."
 type: "talk"
-topics: ["learning design", "learning science", "online learning"]
+topics: ["learning", "design"]
 publishedAt: 2020-10-16
 updatedAt: 2020-10-16
 status: "evergreen"

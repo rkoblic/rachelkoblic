@@ -2,7 +2,7 @@
 title: "How to Improve Your Analytical Thinking Skills"
 description: "On why analytical and creative thinking are deeply intertwined—and why thinking skills matter more than ever."
 type: "essay"
-topics: ["thinking", "skills", "learning"]
+topics: ["learning"]
 publishedAt: 2024-04-20
 updatedAt: 2024-04-20
 status: "evergreen"

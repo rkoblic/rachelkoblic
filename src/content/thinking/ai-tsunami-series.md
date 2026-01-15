@@ -2,7 +2,7 @@
 title: "The AI Tsunami: Reinventing Education for the Age of AI"
 description: "A six-part series exploring how higher education must transform in response to AI—from assessment to precision learning to institutional mission."
 type: "essay"
-topics: ["AI", "higher education", "assessment", "institutional change"]
+topics: ["AI", "higher education", "learning"]
 publishedAt: 2025-09-18
 updatedAt: 2026-01-15
 status: "evergreen"
