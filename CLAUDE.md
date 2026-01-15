@@ -36,6 +36,7 @@ src/
 └── styles/
     └── global.css         # Global styles, CSS variables, term tooltips
 public/
+├── favicon.svg            # RK initials in teal circle
 └── images/                # Static images
     ├── lab/               # Lab project images
     └── hero-illustration.png
@@ -50,7 +51,7 @@ public/
 title: "Post Title"
 description: "Short description"
 type: "essay" | "note" | "talk"
-topics: ["topic1", "topic2"]
+topics: ["AI", "learning", "higher education", "design", "work"]  # Use only these 5 tags
 publishedAt: 2026-01-14
 updatedAt: 2026-01-14
 status: "draft" | "growing" | "evergreen"
@@ -146,6 +147,40 @@ For callout content (like "How I Work"):
 }
 ```
 
+### Type/Status Badges
+
+Post types (essay, note, talk) and lab status use teal badges:
+
+```css
+.post-type {
+  font-size: 0.7rem;
+  color: #FFFDFB;
+  background: #0D9488;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+```
+
+### Topic Tags
+
+Soft outlined style for topic tags:
+
+```css
+border: 1px solid #E8E2DB;
+```
+
+### Embedded Content (Talks)
+
+For embedding external presentations (Gamma, YouTube), use CSS breakout to go wider than prose container:
+
+```html
+<div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); max-width: 1200px;">
+  <iframe src="..." style="width: 100%; height: 700px; border: 1px solid #EBE6E0; border-radius: 8px;"></iframe>
+</div>
+```
+
 ## Voice & Tone Guidelines
 
 - **Plainspoken, not jargon-heavy**: Ground abstract terms in lived meaning
@@ -186,4 +221,13 @@ Create `src/content/lab/project-slug.mdx` with frontmatter above. Add image to `
 - **About**: Complete
 - **Thinking**: Complete (listing + detail pages)
 - **Lab**: Complete (listing + detail pages)
-- **Work**: TODO - portfolio/case studies page
+- **Work**: Complete (areas of exploration with icons, 2-column grid)
+
+## Contact
+
+- **Email**: rkoblic@gmail.com
+- **LinkedIn**: https://www.linkedin.com/in/rkoblic/
+
+## Deployment
+
+Site is deployed via Vercel, domain managed through GoDaddy (rachelkoblic.com).
