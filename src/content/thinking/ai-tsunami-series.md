@@ -4,7 +4,7 @@ description: "A six-part series exploring how higher education must transform in
 type: "essay"
 topics: ["AI", "higher education", "learning"]
 publishedAt: 2025-09-18
-updatedAt: 2026-01-15
+updatedAt: 2026-01-07
 status: "evergreen"
 ---
 
