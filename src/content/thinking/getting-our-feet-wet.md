@@ -8,7 +8,7 @@ updatedAt: 2025-12-04
 status: "evergreen"
 ---
 
-Keynote delivered in Dublin, December 2025, exploring how higher education can strategically adopt AI while maintaining quality and integrity.
+Keynote delivered for <a href="https://www.qqi.ie/" target="_blank" rel="noopener noreferrer">QQI</a> in Dublin, December 2025, exploring how higher education can strategically adopt AI while maintaining quality and integrity.
 
 <iframe src="https://getting-our-feet-wet-akot2lm.gamma.site/" style="width: 100%; height: 450px; border-radius: 8px; border: 1px solid #EBE6E0;" allow="fullscreen" title="Getting Our Feet Wet: Navigating the AI Tsunami in Higher Education"></iframe>
 
