@@ -10,7 +10,7 @@ status: "evergreen"
 
 Keynote delivered in Dublin, December 2025, exploring how higher education can strategically adopt AI while maintaining quality and integrity.
 
-<iframe src="https://gamma.app/embed/s9wk4kkpy4h40u5" style="width: 100%; height: 450px; border-radius: 8px; border: 1px solid #EBE6E0;" allow="fullscreen" title="Getting Our Feet Wet: Navigating the AI Tsunami in Higher Education"></iframe>
+<iframe src="https://getting-our-feet-wet-akot2lm.gamma.site/" style="width: 100%; height: 450px; border-radius: 8px; border: 1px solid #EBE6E0;" allow="fullscreen" title="Getting Our Feet Wet: Navigating the AI Tsunami in Higher Education"></iframe>
 
 ---
 
