@@ -3,29 +3,34 @@ import Base from '../layouts/Base.astro';
 
 const focusAreas = [
   {
-    title: "AI-Readable Curriculum & Syllabus Refactoring",
-    description: "Transforming traditional course materials into structured, machine-interpretable formats that AI systems can reason about while preserving pedagogical intent.",
-    example: "Restructured a 200-course catalog into a connected knowledge graph, enabling personalized learning path generation."
-  },
-  {
     title: "Semantic Architecture for Learning Systems",
-    description: "Designing the underlying data structures and ontologies that allow learning platforms to understand relationships between concepts, skills, and assessments.",
-    example: "Built a competency framework connecting 2,000+ learning objectives to measurable skill outcomes."
+    description: "I design the conceptual and semantic layers that allow learning systems to reason about relationships—between concepts, skills, evidence, and progression.",
+    detail: "This includes ontologies, competency models, and other connective structures that sit beneath interfaces and content, shaping what systems can 'understand' and adapt to."
   },
   {
-    title: "AI-Era Assessment Design",
-    description: "Creating assessment strategies that work with AI—measuring authentic understanding rather than recall, and generating meaningful diagnostic data.",
-    example: "Developed adaptive assessment prototypes that identify specific misconceptions rather than just wrong answers."
+    title: "AI-Readable Curriculum & Learning Structures",
+    description: "I help re-architect curriculum, syllabi, and learning frameworks so they can be meaningfully interpreted by both humans and AI systems—without flattening pedagogy or intent.",
+    detail: "This work often involves surfacing hidden assumptions, making learning logic explicit, and translating tacit educational design into structured, machine-legible form."
   },
   {
-    title: "Pedagogical Agent Design",
-    description: "Defining how AI tutors and assistants should behave—what they should know about learning science, when to intervene, and how to adapt to individual learners.",
-    example: "Designed interaction patterns for an AI writing tutor that scaffolds without over-helping."
+    title: "AI-Era Assessment & Evaluation",
+    description: "I work on assessment models that remain credible when AI is present—favoring diagnostic insight, sense-making, and transfer over recall or surveillance.",
+    detail: "This includes both learner-facing assessment and system-level evaluation: how we know whether AI-mediated learning experiences are actually working, and for whom."
   },
   {
-    title: "Learning System Strategy & Architecture",
-    description: "Helping organizations think through how AI changes their learning products—from content strategy to technical architecture to team capabilities.",
-    example: "Led strategic planning for an edtech company's transition from static content to adaptive learning."
+    title: "Pedagogical Agents & Learning Evals",
+    description: "I design how AI tutors, coaches, and learning agents should behave—what they attend to, how they intervene, and how their performance is evaluated over time.",
+    detail: "This work brings learning science, interaction design, and evaluation frameworks together to ensure agents support thinking rather than replace it."
+  },
+  {
+    title: "Prototyping & Exploratory Build",
+    description: "I use prototyping as a way of thinking—building small, concrete artifacts to explore complex questions about learning, AI, and systems design.",
+    detail: "These prototypes are not demos for show; they're working objects that help teams see trade-offs, test assumptions, and learn faster than discussion alone."
+  },
+  {
+    title: "Personalization & Adaptive Learning",
+    description: "I work on approaches to personalization that go beyond content branching—focusing on learner context, goals, constraints, and developmental readiness.",
+    detail: "The aim is not maximal customization, but meaningful adaptation: learning experiences that respond to people without becoming brittle, opaque, or extractive."
   }
 ];
 ---
@@ -35,21 +40,26 @@ const focusAreas = [
     <div class="intro">
       <h1 class="page-title">Work</h1>
       <p class="intro-text">
-        I work with institutions, learning companies, and innovators who are building the future of education. My approach is collaborative and exploratory—I help teams see the systems underneath their content and find leverage points for meaningful change.
+        I work with institutions, learning companies, and research-minded teams who are navigating how learning changes in an AI-rich world.
       </p>
       <p class="intro-text">
-        Most engagements involve some combination of strategic thinking, hands-on prototyping, and building internal capacity. I'm less interested in delivering reports than in creating lasting capability.
+        My role is often to help make the invisible structure visible—to surface the assumptions, systems, and design choices underneath curriculum, assessment, and learning technology, and to find places where small shifts can unlock meaningful change.
+      </p>
+      <p class="intro-text">
+        Most engagements blend strategic thinking with hands-on making. I'm less interested in producing reports than in building shared understanding, working prototypes, and internal capability that lasts.
       </p>
     </div>
 
+    <p class="threshold-text">Much of this work happens upstream—before solutions are obvious.</p>
+
     <div class="focus-areas">
-      <h2 class="section-label">Focus Areas</h2>
+      <h2 class="section-label">Areas of Exploration</h2>
       <div class="cards">
         {focusAreas.map((area) => (
           <div class="card">
             <h3 class="card-title">{area.title}</h3>
             <p class="card-description">{area.description}</p>
-            <p class="card-example">{area.example}</p>
+            <p class="card-detail">{area.detail}</p>
           </div>
         ))}
       </div>
@@ -59,17 +69,20 @@ const focusAreas = [
       <h2 class="section-label">How I Work</h2>
       <div class="how-content">
         <p>
-          I typically start with a discovery phase—understanding your current state, your constraints, and what success looks like. From there, I might facilitate workshops, build prototypes, design systems, or embed with your team for a period of focused work.
+          I usually begin with a period of discovery—listening closely to how things work today, where the constraints are, and what success would actually look like in practice.
         </p>
         <p>
-          I work best with teams who are genuinely curious about what's possible and willing to question assumptions. The most interesting problems live at the intersection of pedagogy, technology, and organizational change.
+          From there, the work might include facilitated conversations, system mapping, rapid prototypes, or short periods of embedded collaboration. I work best with teams who are genuinely curious, comfortable sitting with uncertainty, and interested in learning their way forward.
+        </p>
+        <p>
+          The problems I'm most drawn to live at the intersection of pedagogy, technology, and organizational change—where clean answers are rare, but good design can still create clarity.
         </p>
       </div>
     </div>
 
     <div class="cta">
       <h2 class="cta-title">Let's talk</h2>
-      <p class="cta-text">If you're working on something in this space, I'd love to hear about it.</p>
+      <p class="cta-text">If you're working on something in this space and want a thoughtful partner to explore it with, I'd love to hear about it.</p>
       <a href="/about#contact" class="cta-button">Get in touch</a>
     </div>
   </section>
@@ -117,6 +130,12 @@ const focusAreas = [
     margin-bottom: 0;
   }
 
+  .threshold-text {
+    font-size: 0.925rem;
+    color: #8B7E71;
+    margin: 64px 0;
+  }
+
   .focus-areas {
     margin-bottom: 80px;
   }
@@ -160,10 +179,9 @@ const focusAreas = [
     margin-bottom: 16px;
   }
 
-  .card-example {
+  .card-detail {
     font-size: 0.9rem;
     color: #8B7E71;
-    font-style: italic;
   }
 
   .how-i-work {
@@ -209,7 +227,7 @@ const focusAreas = [
     display: inline-block;
     font-size: 0.9rem;
     color: #FFFDFB;
-    background: #5A524A;
+    background: #0D9488;
     padding: 16px 40px;
     border-radius: 4px;
     text-decoration: none;
@@ -217,6 +235,6 @@ const focusAreas = [
   }
 
   .cta-button:hover {
-    background: #2C2825;
+    background: #0B7C72;
   }
 </style>
