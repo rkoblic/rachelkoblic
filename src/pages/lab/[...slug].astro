@@ -1,0 +1,129 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('lab');
+  return projects.map(project => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<Base title={project.data.title} description={project.data.description}>
+  <article class="py-20 px-16 max-md:px-8">
+    <header class="max-w-[900px] mx-auto mb-12">
+      <div class="flex items-center gap-4 mb-6">
+        <span class="text-xs text-[--color-text-muted] uppercase tracking-widest">
+          {project.data.status}
+        </span>
+        <span class="text-xs text-[--color-text-muted]">
+          {project.data.date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+        </span>
+      </div>
+      <h1 class="text-4xl text-[--color-text-primary] mb-6 max-sm:text-3xl">
+        {project.data.title}
+      </h1>
+      <p class="text-xl text-[--color-text-secondary] leading-relaxed">
+        {project.data.description}
+      </p>
+    </header>
+
+    {project.data.image && (
+      <div class="max-w-[900px] mx-auto mb-12">
+        <img
+          src={project.data.image}
+          alt=""
+          class="w-full rounded-lg"
+        />
+      </div>
+    )}
+
+    {project.data.embedType === 'link' && project.data.embedUrl && (
+      <div class="max-w-[900px] mx-auto mb-12">
+        <a
+          href={project.data.embedUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-base text-[#0D9488] border border-[#0D9488] py-3 px-6 rounded transition-all hover:bg-[#0D9488] hover:text-white no-underline"
+        >
+          Open demo
+          <svg viewBox="0 0 24 24" class="w-5 h-5 stroke-current stroke-2 fill-none">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+        </a>
+      </div>
+    )}
+
+    {project.data.embedType === 'iframe' && project.data.embedUrl && (
+      <div class="max-w-[900px] mx-auto mb-12">
+        <div class="aspect-video bg-[--color-bg-card] rounded border border-[--color-border] overflow-hidden">
+          <iframe
+            src={project.data.embedUrl}
+            class="w-full h-full"
+            title={project.data.title}
+          />
+        </div>
+      </div>
+    )}
+
+    <div class="max-w-[720px] mx-auto prose prose-lg">
+      <Content />
+    </div>
+
+    <footer class="max-w-[720px] mx-auto mt-16 pt-8 border-t border-[#F0EAE3]">
+      <div class="flex flex-wrap gap-2">
+        {project.data.topics.map(topic => (
+          <span class="text-sm text-[--color-text-tertiary] bg-[--color-bg-page] px-3 py-1 rounded">
+            {topic}
+          </span>
+        ))}
+      </div>
+    </footer>
+  </article>
+</Base>
+
+<style is:global>
+  .prose {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+  }
+  .prose h2 {
+    font-family: var(--font-heading);
+    color: var(--color-text-primary);
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .prose h3 {
+    font-family: var(--font-heading);
+    color: var(--color-text-primary);
+    font-size: 1.35rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose p {
+    margin-bottom: 1.5rem;
+  }
+  .prose a {
+    color: #0D9488;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .prose a:hover {
+    color: #0B7C72;
+  }
+  .prose ul, .prose ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  .prose li {
+    margin-bottom: 0.5rem;
+  }
+</style>

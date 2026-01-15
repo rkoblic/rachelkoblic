@@ -1,0 +1,207 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('thinking');
+const sortedPosts = posts.sort((a, b) => b.data.updatedAt.valueOf() - a.data.updatedAt.valueOf());
+
+const allTopics = [...new Set(posts.flatMap(post => post.data.topics))].sort();
+---
+
+<Base title="Thinking" description="Essays, notes, and evolving ideas on AI-era learning, knowledge graphs, and curriculum design.">
+  <section class="section">
+    <div class="intro">
+      <h1 class="page-title">Thinking</h1>
+      <p class="intro-text">
+        Essays, notes, and evolving ideas. This is a digital garden—some pieces are polished, others are still growing. Updated dates show when I last tended to each.
+      </p>
+    </div>
+
+    {allTopics.length > 0 && (
+      <div class="filters">
+        <span class="filter-label">View by:</span>
+        {allTopics.map(topic => (
+          <button class="filter-button">{topic}</button>
+        ))}
+      </div>
+    )}
+
+    <p class="sort-note">Showing most recently tended pieces.</p>
+
+    {sortedPosts.length > 0 ? (
+      <div class="posts">
+        {sortedPosts.map(post => (
+          <a href={`/thinking/${post.slug}`} class="post-card">
+            <div class="post-meta">
+              <span class="post-type">{post.data.type}</span>
+              {post.data.status && post.data.status !== 'evergreen' && (
+                <span class="post-status">{post.data.status}</span>
+              )}
+            </div>
+            <h2 class="post-title">{post.data.title}</h2>
+            <p class="post-description">{post.data.description}</p>
+            <div class="post-footer">
+              <span>Updated {post.data.updatedAt.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
+              <span class="separator">·</span>
+              <span>{post.data.topics.join(', ')}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <div class="empty-state">
+        <p>Essays and notes coming soon.</p>
+      </div>
+    )}
+  </section>
+</Base>
+
+<style>
+  .section {
+    padding: 80px 64px;
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 60px 32px;
+    }
+  }
+
+  .intro {
+    max-width: 800px;
+    margin-bottom: 48px;
+  }
+
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #2C2825;
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+
+  @media (max-width: 640px) {
+    .page-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .intro-text {
+    font-size: 1.125rem;
+    color: #5A524A;
+    line-height: 1.75;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+
+  .filter-label {
+    font-size: 0.875rem;
+    color: #A89F94;
+  }
+
+  .filter-button {
+    font-size: 0.875rem;
+    color: #8B7E71;
+    background: #FAF8F5;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #F0EAE3;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filter-button:hover {
+    border-color: #D4CCC2;
+  }
+
+  .sort-note {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: #A89F94;
+    margin-bottom: 32px;
+  }
+
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .post-card {
+    display: block;
+    padding: 32px;
+    background: #FAF8F5;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .post-card:hover {
+    background: #F7F3EE;
+    border-color: #E8E2DB;
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .post-type {
+    font-size: 0.75rem;
+    color: #A89F94;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .post-status {
+    font-size: 0.75rem;
+    color: #A89F94;
+    background: #F5F0EA;
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+
+  .post-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #2C2825;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .post-description {
+    font-size: 1rem;
+    color: #5A524A;
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+
+  .post-footer {
+    font-size: 0.875rem;
+    color: #A89F94;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .separator {
+    color: #EBE6E0;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 80px 0;
+    color: #8B7E71;
+  }
+</style>

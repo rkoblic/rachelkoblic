@@ -1,0 +1,177 @@
+---
+import Base from '../layouts/Base.astro';
+import Card from '../components/Card.astro';
+import { getCollection } from 'astro:content';
+
+const thinking = await getCollection('thinking');
+const recentThinking = thinking
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .slice(0, 3);
+
+const lab = await getCollection('lab');
+const recentLab = lab
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 2);
+---
+
+<Base title="Home">
+  <!-- Hero Section -->
+  <section class="grid grid-cols-[1fr_400px] gap-20 py-24 px-16 items-center max-lg:grid-cols-1 max-lg:gap-16 max-lg:py-20 max-lg:px-8">
+    <div class="max-w-[600px]">
+      <h1 class="text-6xl text-[--color-text-primary] mb-5 tracking-tight max-sm:text-4xl">
+        Rachel Koblic
+      </h1>
+      <p class="font-[--font-heading] text-2xl font-normal italic text-[--color-text-tertiary] mb-8 leading-relaxed">
+        Designing the Logic Layer for AI-Era Learning
+      </p>
+      <p class="text-lg text-[--color-text-secondary] leading-relaxed mb-4">
+        I work on the invisible structures that connect learning science to intelligent systems—so machines can reason about pedagogy, and people can learn more thoughtfully alongside AI.
+      </p>
+      <p class="text-lg text-[--color-text-secondary] leading-relaxed">
+        I call this the <span class="term-tooltip" data-tooltip="The structures that make learning legible to intelligent systems.">logic layer</span>: the connective tissue between human learning intent and machine intelligence.
+      </p>
+    </div>
+    <div class="flex justify-center items-center relative max-lg:order-first">
+      <!-- Soft background circle -->
+      <div class="absolute w-80 h-80 bg-gradient-to-br from-[#F5EDE4] to-[#FAF6F1] rounded-full"></div>
+      <!-- Abstract sketch: botanical graph -->
+      <div class="relative z-10 w-[260px] h-[260px] opacity-60">
+        <svg viewBox="0 0 200 200" class="w-full h-full fill-none">
+          <!-- Main stem -->
+          <path d="M100 180 C100 150 95 120 100 100" stroke="#5A524A" stroke-width="1.5" stroke-linecap="round" />
+
+          <!-- Branches -->
+          <path d="M100 140 C80 130 60 135 45 120" stroke="#5A524A" stroke-width="1.2" stroke-linecap="round" />
+          <path d="M100 140 C120 130 145 130 160 115" stroke="#5A524A" stroke-width="1.2" stroke-linecap="round" />
+          <path d="M100 100 C85 85 70 80 50 70" stroke="#8B7E71" stroke-width="1" stroke-linecap="round" />
+          <path d="M100 100 C115 85 135 75 155 65" stroke="#8B7E71" stroke-width="1" stroke-linecap="round" />
+          <path d="M100 100 C100 80 100 60 100 40" stroke="#8B7E71" stroke-width="1" stroke-linecap="round" />
+
+          <!-- Secondary twigs -->
+          <path d="M45 120 C35 110 30 95 35 80" stroke="#A89F94" stroke-width="0.8" stroke-linecap="round" />
+          <path d="M160 115 C170 100 175 85 170 70" stroke="#A89F94" stroke-width="0.8" stroke-linecap="round" />
+
+          <!-- Nodes - like buds or fruits -->
+          <circle cx="100" cy="180" r="4" stroke="#5A524A" stroke-width="1.5" />
+          <circle cx="100" cy="140" r="3" stroke="#5A524A" stroke-width="1.2" />
+          <circle cx="100" cy="100" r="4" stroke="#0D9488" stroke-width="2" />
+          <circle cx="45" cy="120" r="3" stroke="#0D9488" stroke-width="1.5" />
+          <circle cx="160" cy="115" r="3" stroke="#0D9488" stroke-width="1.5" />
+          <circle cx="50" cy="70" r="2.5" stroke="#8B7E71" stroke-width="1" />
+          <circle cx="155" cy="65" r="2.5" stroke="#8B7E71" stroke-width="1" />
+          <circle cx="100" cy="40" r="3" stroke="#5A524A" stroke-width="1.2" />
+          <circle cx="35" cy="80" r="2" stroke="#A89F94" stroke-width="1" />
+          <circle cx="170" cy="70" r="2" stroke="#A89F94" stroke-width="1" />
+
+          <!-- Small accent dots -->
+          <circle cx="75" cy="110" r="1.5" fill="#A89F94" />
+          <circle cx="125" cy="108" r="1.5" fill="#A89F94" />
+          <circle cx="90" cy="70" r="1.5" fill="#0D9488" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Statement Section -->
+  <section class="bg-[--color-bg-card] py-20 px-16 border-t border-[#F0EAE3] max-md:px-8">
+    <div class="max-w-[720px] mx-auto text-center">
+      <div class="font-[--font-heading] text-sm uppercase tracking-[0.18em] text-[--color-text-muted] font-medium mb-7">
+        The Problem I'm Working On
+      </div>
+      <blockquote class="font-[--font-heading] text-3xl font-normal italic text-[#4A443E] leading-snug mb-6 max-sm:text-2xl">
+        Learning has been designed for humans to interpret—not for AI systems to reason about pedagogy.
+      </blockquote>
+      <p class="text-lg text-[--color-text-primary] leading-relaxed mb-16">
+        We've been dropping human-written materials into machines and hoping intelligence emerges. It doesn't.
+      </p>
+      <p class="text-base text-[--color-text-secondary] leading-relaxed">
+        Learning in the AI era requires pedagogy to be explicit—designed so intelligent systems can reason with it, not just perform around it.
+      </p>
+    </div>
+  </section>
+
+  <!-- Recent Thinking Section -->
+  <section class="py-20 px-16 border-t border-[#F0EAE3] max-md:px-8">
+    <div class="flex justify-between items-baseline mb-10">
+      <div class="font-[--font-heading] text-sm uppercase tracking-[0.18em] text-[--color-text-muted] font-medium">
+        Recent Thinking
+      </div>
+      <a href="/thinking" class="text-xs tracking-wide text-[--color-text-tertiary] no-underline transition-colors hover:text-[#0D9488]">
+        View all &rarr;
+      </a>
+    </div>
+    <div class="grid grid-cols-3 gap-7 max-lg:grid-cols-1 items-stretch">
+      {recentThinking.map(post => (
+        <Card
+          title={post.data.title}
+          description={post.data.description}
+          meta={post.data.type}
+          href={`/thinking/${post.slug}`}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- From the Lab Section -->
+  <section class="py-24 px-16 border-t border-[#F0EAE3] max-md:px-8">
+    <div class="flex justify-between items-baseline mb-10">
+      <div class="font-[--font-heading] text-sm uppercase tracking-[0.18em] text-[--color-text-muted] font-medium">
+        From the Lab
+      </div>
+      <a href="/lab" class="text-xs tracking-wide text-[--color-text-tertiary] no-underline transition-colors hover:text-[#0D9488]">
+        View all &rarr;
+      </a>
+    </div>
+    <div class="grid grid-cols-2 gap-7 max-lg:grid-cols-1">
+      {recentLab.map(project => (
+        <a href={`/lab/${project.slug}`} class="p-10 bg-[--color-bg-page] rounded-lg border border-[#F0EAE3] transition-all hover:border-[#E0D8CE] flex gap-7 items-start no-underline">
+          {project.data.image ? (
+            <img src={project.data.image} alt="" class="w-16 h-16 object-cover rounded shrink-0" />
+          ) : (
+            <div class="w-12 h-12 bg-[#F0EAE3] rounded flex justify-center items-center shrink-0">
+              <svg viewBox="0 0 24 24" class="w-6 h-6 stroke-[--color-text-tertiary] stroke-[1.5] fill-none">
+                <circle cx="12" cy="12" r="3" />
+                <circle cx="12" cy="4" r="2" />
+                <circle cx="12" cy="20" r="2" />
+                <circle cx="4" cy="12" r="2" />
+                <circle cx="20" cy="12" r="2" />
+                <line x1="12" y1="6" x2="12" y2="9" />
+                <line x1="12" y1="15" x2="12" y2="18" />
+                <line x1="6" y1="12" x2="9" y2="12" />
+                <line x1="15" y1="12" x2="18" y2="12" />
+              </svg>
+            </div>
+          )}
+          <div>
+            <h3 class="font-[--font-heading] text-xl font-medium text-[--color-text-primary] mb-2">
+              {project.data.title}
+            </h3>
+            <p class="text-sm text-[--color-text-secondary] leading-relaxed mb-3">
+              {project.data.description}
+            </p>
+            <span class="text-xs text-[--color-text-muted] uppercase tracking-wider bg-[#F5F0EA] py-1 px-2.5 rounded inline-block">
+              {project.data.status}
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 px-16 text-center border-t border-[#F0EAE3] relative max-md:px-8">
+    <!-- Background glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[radial-gradient(circle,#F5EDE4_0%,transparent_70%)] z-0"></div>
+    <div class="relative z-10">
+      <h2 class="text-4xl text-[--color-text-primary] mb-4">
+        Let's talk
+      </h2>
+      <p class="text-lg text-[--color-text-secondary] mb-8">
+        I work with institutions, learning companies, and innovators building the future of education.
+      </p>
+      <a href="/about#contact" class="inline-block text-sm text-white bg-[#0D9488] py-4 px-10 rounded transition-all hover:bg-[#0B7C72] no-underline">
+        Get in touch
+      </a>
+    </div>
+  </section>
+</Base>

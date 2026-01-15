@@ -1,0 +1,94 @@
+---
+const navItems = [
+  { label: 'Thinking', href: '/thinking' },
+  { label: 'Lab', href: '/lab' },
+  { label: 'Work', href: '/work' },
+  { label: 'About', href: '/about' },
+];
+
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string): boolean {
+  if (href === '/') {
+    return currentPath === '/';
+  }
+  return currentPath.startsWith(href);
+}
+---
+
+<header class="header">
+  <a href="/" class="logo">Rachel Koblic</a>
+  <nav class="nav">
+    {navItems.map((item) => (
+      <a
+        href={item.href}
+        class:list={['nav-link', { active: isActive(item.href) }]}
+      >
+        {item.label}
+      </a>
+    ))}
+  </nav>
+</header>
+
+<style>
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 64px;
+    border-bottom: 1px solid #EBE6E0;
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      padding: 28px 32px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .header {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: #2C2825;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+
+  .nav {
+    display: flex;
+    gap: 40px;
+  }
+
+  @media (max-width: 640px) {
+    .nav {
+      gap: 24px;
+    }
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    color: #7A7067;
+    text-decoration: none;
+    transition: color 0.2s;
+    letter-spacing: 0.01em;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav-link:hover {
+    color: #2C2825;
+  }
+
+  .nav-link.active {
+    color: #2C2825;
+    border-bottom-color: #2C2825;
+  }
+</style>

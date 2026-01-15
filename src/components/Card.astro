@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  meta?: string;
+  href?: string;
+}
+
+const { title, description, meta, href } = Astro.props;
+const Tag = href ? 'a' : 'div';
+---
+
+<Tag
+  href={href}
+  class:list={[
+    "flex flex-col h-full p-9 bg-[--color-bg-page] rounded transition-all border border-transparent",
+    href && "hover:bg-[--color-bg-card] hover:border-[#E8E2DB] no-underline"
+  ]}
+>
+  <div class="h-5 mb-3">
+    {meta && (
+      <div class="text-xs text-[--color-text-muted] uppercase tracking-widest">
+        {meta}
+      </div>
+    )}
+  </div>
+  <h3 class="font-[--font-heading] text-xl font-medium text-[--color-text-primary] mb-3 leading-tight">
+    {title}
+  </h3>
+  <p class="text-sm text-[--color-text-secondary] leading-relaxed flex-grow">
+    {description}
+  </p>
+</Tag>

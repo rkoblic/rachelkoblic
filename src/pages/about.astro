@@ -1,0 +1,332 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="About" description="The human behind the thesis. Bio, philosophy, and contact information.">
+  <section class="section">
+    <div class="layout">
+      <!-- Photo column -->
+      <div class="photo-column">
+        <img src="/images/rachel_koblic_headshot_2026.jpg" alt="Rachel Koblic" class="photo" />
+      </div>
+
+      <!-- Content column -->
+      <div class="content-column">
+        <h1 class="page-title">About</h1>
+
+        <div class="bio">
+          <p class="bio-lead">
+            I'm Rachel Koblic. I'm a designer by nature and a generalist at heart, drawn to complex systems where human judgment, pedagogy, and intelligent tools have to learn how to work together.
+          </p>
+          <p>
+            My work sits at the intersection of learning, design, and AI—but not as separate domains. I treat them as materials in the same practice. I design structures, not just artifacts. I'm interested in how intent travels through systems, how meaning gets lost or preserved, and how we can make learning legible—to people and to machines.
+          </p>
+          <p>
+            Earlier in my career, I worked in traditional instructional design, building courses and programs for universities and large learning organizations. That work grounded me deeply in pedagogy and practice. It taught me how learning actually shows up in the world—messy, contextual, constrained.
+          </p>
+          <p>
+            Over time, though, my attention shifted. I became less interested in content alone and more interested in the architecture beneath it: the assumptions, relationships, and design decisions that shape how learning systems behave.
+          </p>
+          <p>
+            That shift crystallized during my time at Matter & Space, where I was immersed in systems thinking, design practice, and emerging AI capabilities. It clarified something I had been circling for years: many learning systems struggle not because the pedagogy is wrong, but because the underlying logic was never designed to be worked with—by humans or by machines.
+          </p>
+          <p>
+            I started calling that missing layer the <span class="term-tooltip" data-tooltip="The structures that make learning legible to intelligent systems.">logic layer</span>: the semantic and structural connective tissue between pedagogical intent and intelligent systems.
+          </p>
+          <p>
+            Today, I work as a design-led partner with learning companies and institutions building in the AI era. I move comfortably between abstraction and application—sketching knowledge graphs, prototyping with language models, collaborating with engineers, and working alongside faculty and learning designers. I'm a power user of AI, not because I'm chasing efficiency, but because I see it as a new design material: something to think with, test against, and shape deliberately.
+          </p>
+          <p>
+            What I care about most is coherence. Systems that make sense. Learning experiences that embody their values. Tools that support judgment rather than replace it.
+          </p>
+        </div>
+
+        <aside class="how-i-work">
+          <h2 class="aside-label">How I Work</h2>
+          <ul class="work-list">
+            <li>I think by sketching.</li>
+            <li>I prototype to understand.</li>
+            <li>I treat AI as a collaborator, not a shortcut.</li>
+            <li>I value coherence over cleverness.</li>
+            <li>I design for judgment, not just outcomes.</li>
+          </ul>
+        </aside>
+
+        <div class="philosophy">
+          <h2 class="section-label">Philosophy</h2>
+          <p>
+            I don't believe the future of learning is about replacing human teachers with AI. I believe it's about designing systems that carry pedagogical wisdom forward, so humans are freed to do what only humans can do: inspire, mentor, notice, and adapt in the moment.
+          </p>
+          <p>
+            Good learning systems don't automate pedagogy. They embody it.
+          </p>
+          <p>
+            My work focuses on making pedagogical intent explicit—designed into structures that intelligent systems can reason with. Not simplifying learning to fit algorithms, but raising the floor on what AI can meaningfully understand about how humans learn.
+          </p>
+          <p>
+            I'm optimistic about what's now possible, and clear-eyed about the responsibility that comes with it. The tools are finally expressive enough. The open question is whether we choose to build thoughtfully—or simply fast.
+          </p>
+        </div>
+
+        <div class="now">
+          <h2 class="section-label">Now</h2>
+          <div class="now-card">
+            <p>
+              Currently exploring: how pedagogical intent can be represented, structured, and tested so AI tutoring and learning systems can act with discernment—not just fluency.
+            </p>
+            <p>In practice, that looks like:</p>
+            <ul class="now-list">
+              <li>building and breaking small prototypes</li>
+              <li>sketching systems to see how ideas behave</li>
+              <li>writing in public as thinking evolves</li>
+              <li>collaborating across disciplines</li>
+              <li>and learning alongside people comfortable with uncertainty</li>
+            </ul>
+            <p class="now-updated">Last updated: January 2026</p>
+          </div>
+        </div>
+
+        <div id="contact" class="contact">
+          <h2 class="section-label">Get in Touch</h2>
+          <p class="contact-intro">
+            I'm most interested in working with people who see design as a way of thinking—who are building learning systems, tools, or institutions and want a collaborator who can move fluidly across pedagogy, design, and AI.
+          </p>
+          <p class="contact-intro">
+            If you're building something, wrestling with a complex idea, or simply want to compare notes, I'd love to hear from you.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:hello@rachelkoblic.com" class="contact-link">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              Email
+            </a>
+            <a href="https://linkedin.com/in/rachelkoblic" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <svg viewBox="0 0 24 24">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .section {
+    padding: 80px 64px;
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 60px 32px;
+    }
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 64px;
+  }
+
+  @media (max-width: 1024px) {
+    .layout {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  .photo-column {
+    order: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .photo-column {
+      order: -1;
+    }
+  }
+
+  .photo {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #2C2825;
+    margin-bottom: 32px;
+    line-height: 1.1;
+  }
+
+  @media (max-width: 640px) {
+    .page-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .bio {
+    margin-bottom: 48px;
+  }
+
+  .bio-lead {
+    font-size: 1.125rem;
+    color: #5A524A;
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+
+  .bio p {
+    font-size: 1rem;
+    color: #5A524A;
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+
+  .bio p:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #A89F94;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+
+  .how-i-work {
+    margin-bottom: 48px;
+    padding: 28px 32px;
+    background: #FAF8F5;
+    border-left: 3px solid #0D9488;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .aside-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #A89F94;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .work-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .work-list li {
+    font-size: 1rem;
+    color: #5A524A;
+    line-height: 1.75;
+    padding-left: 0;
+    margin-bottom: 6px;
+  }
+
+  .work-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .philosophy {
+    margin-bottom: 48px;
+  }
+
+  .philosophy p {
+    font-size: 1rem;
+    color: #5A524A;
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+
+  .philosophy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .now {
+    margin-bottom: 48px;
+  }
+
+  .now-card {
+    padding: 24px;
+    background: #FAF8F5;
+    border-radius: 8px;
+    border: 1px solid #F0EAE3;
+  }
+
+  .now-card p {
+    font-size: 1rem;
+    color: #5A524A;
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .now-list {
+    margin: 0 0 16px 0;
+    padding-left: 20px;
+    color: #5A524A;
+    line-height: 1.75;
+  }
+
+  .now-list li {
+    margin-bottom: 4px;
+  }
+
+  .now-updated {
+    font-size: 0.875rem;
+    color: #A89F94;
+    font-style: italic;
+    margin-bottom: 0 !important;
+  }
+
+  .contact {
+    padding-top: 32px;
+    border-top: 1px solid #F0EAE3;
+  }
+
+  .contact-intro {
+    font-size: 1rem;
+    color: #5A524A;
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    color: #5A524A;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-link:hover {
+    color: #2C2825;
+  }
+
+  .contact-link svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+  }
+</style>
