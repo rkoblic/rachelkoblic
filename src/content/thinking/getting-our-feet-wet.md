@@ -10,10 +10,6 @@ status: "evergreen"
 
 Keynote delivered at <a href="https://www.qqi.ie/events/quality-in-higher-education-sectoral-findings-and-enhancement-showcase" target="_blank" rel="noopener noreferrer">QQI's Annual Showcase</a> in Dublin, December 2025, exploring how higher education can strategically adopt AI while maintaining quality and integrity.
 
-<iframe src="https://getting-our-feet-wet-akot2lm.gamma.site/" style="width: 100%; height: 450px; border-radius: 8px; border: 1px solid #EBE6E0;" allow="fullscreen" title="Getting Our Feet Wet: Navigating the AI Tsunami in Higher Education"></iframe>
-
----
-
 ## Key themes
 
 **AI's current state** — Tracing the evolution from 1956 to ChatGPT's explosive growth, and where AI now matches (or exceeds) human performance.
@@ -29,3 +25,7 @@ Keynote delivered at <a href="https://www.qqi.ie/events/quality-in-higher-educat
 ---
 
 The central question: how do we build institutional capacity for a technology that's still finding its shape?
+
+<div style="width: 100vw; position: relative; left: 50%; transform: translateX(-50%); max-width: 1200px; margin-top: 2rem;">
+  <iframe src="https://getting-our-feet-wet-akot2lm.gamma.site/" style="width: 100%; height: 700px; border: 1px solid #EBE6E0; border-radius: 8px;" allow="fullscreen" title="Getting Our Feet Wet: Navigating the AI Tsunami in Higher Education"></iframe>
+</div>
