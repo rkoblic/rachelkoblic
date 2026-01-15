@@ -223,6 +223,12 @@ Create `src/content/lab/project-slug.mdx` with frontmatter above. Add image to `
 - **Lab**: Complete (listing + detail pages)
 - **Work**: Complete (areas of exploration with icons, 2-column grid)
 
+## Future Ideas
+
+- **Favorite Reads** - Curated reading list / bookshelf page
+- **Knowledge Graph** - Visual representation of ideas and connections
+- **Ideas/Scrap Page** - Phrases, quotes, fragments—thinking-in-progress
+
 ## Contact
 
 - **Email**: rkoblic@gmail.com
