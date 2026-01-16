@@ -52,6 +52,10 @@ const fullTitle = `${title} | Rachel Koblic`;
     <title>{fullTitle}</title>
   </head>
   <body>
+    <script>
+      import { inject } from '@vercel/analytics';
+      inject();
+    </script>
     <div class="max-w-[1400px] mx-auto bg-[--color-bg-main] min-h-screen shadow-[0_0_80px_rgba(0,0,0,0.04)]">
       <Header />
       <main>
