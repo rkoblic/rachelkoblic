@@ -37,9 +37,10 @@ src/
     └── global.css         # Global styles, CSS variables, term tooltips
 public/
 ├── favicon.svg            # RK initials in teal circle
-└── images/                # Static images
-    ├── lab/               # Lab project images
-    └── hero-illustration.png
+├── images/                # Static images
+│   ├── lab/               # Lab project images
+│   └── hero-illustration.png
+└── lab/                   # Static HTML artifacts for lab projects (e.g., reports, demos)
 ```
 
 ## Content Collections
@@ -237,3 +238,5 @@ Create `src/content/lab/project-slug.mdx` with frontmatter above. Add image to `
 ## Deployment
 
 Site is deployed via Vercel, domain managed through GoDaddy (rachelkoblic.com).
+
+**Vercel Analytics** is enabled — injected via `@vercel/analytics` in `Base.astro`. View stats in the Vercel dashboard.
