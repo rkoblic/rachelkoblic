@@ -1,0 +1,48 @@
+---
+title: "LLM as Judge"
+description: "Applying LLM-as-Judge to AI tutoring evaluation. A work in progress."
+status: "experiment"
+embedType: "link"
+embedUrl: "/lab/llm-as-judge-irr-report.html"
+image: "/images/lab/llm-as-judge.png"
+date: 2026-01-16
+topics: ["AI", "evaluation", "learning", "cognitive apprenticeship"]
+---
+
+Built with <a href="https://www.linkedin.com/in/janine-agarwal/" target="_blank" rel="noopener noreferrer">Janine Agarwal</a>, <a href="https://www.linkedin.com/in/anna-hadjiyiannis/" target="_blank" rel="noopener noreferrer">Anna Hadjiyiannis</a>, and <a href="https://www.linkedin.com/in/nthatomoagi/" target="_blank" rel="noopener noreferrer">Nthato Gift Moagi</a> for a chapter in <a href="https://thepromptbook.org" target="_blank" rel="noopener noreferrer">The Pedagogical Promptbook</a>.
+
+## The Question
+
+If you're building an AI tutor, how do you know if it's actually teaching well?
+
+We built MentorAI—an agent grounded in cognitive apprenticeship that teaches people to give peer feedback using the Situation-Behavior-Impact framework. But evaluating teaching quality is inherently subjective. A tutor might give correct information while still being pedagogically flat. It might coach beautifully on one dimension and miss obvious errors on another.
+
+LLM-as-Judge is a well-established approach—there's a growing body of research on using language models to evaluate other language models. We wanted to try it ourselves. Not to prove it works, but to figure out what it takes to make it work in our context.
+
+## What This Does
+
+We designed a two-stage evaluation pipeline:
+
+**Stage 1: Critical Criteria (7 must-pass gates)**
+Does the mentor demonstrate the skill before asking the learner to try? Does it catch common errors like vague language or judgment-laden feedback? Does it protect productive struggle instead of giving answers too quickly?
+
+**Stage 2: Quality Criteria (24 criteria across 6 domains)**
+Session setup, modeling quality, coaching quality, content fidelity, adaptive pacing, and conversational quality. Each evaluated by a separate LLM judge prompt.
+
+To test whether the LLM judge was reliable, we ran inter-rater reliability: four humans scored the same three conversations, then compared their judgments to the LLM's.
+
+This is our first calibration attempt. So far: **76% overall agreement** between humans and LLM. But the interesting part is where it breaks down. Critical criteria hit 95%+ agreement—those are well-defined. Conversational quality (Domain F) dropped to 58%. And we found two distinct rater clusters: three humans who were stricter, and one human who consistently aligned with the LLM's more lenient interpretation.
+
+We're sharing this mid-project because the process of getting here has been as interesting as the results.
+
+## What I'm Learning
+
+**On the methodology:** Well-defined criteria calibrate; fuzzy ones don't. "Catches vague situations" is easy to score. "Has a voice" is not. The inter-rater process didn't just validate the LLM—it showed us exactly which criteria need sharper definitions. We're not done; we're iterating.
+
+**On what's possible now:** We built all of this without engineers. The entire pipeline—automated tutor-learner conversations, LangSmith trace capture, LLM judge prompts, the evaluation scripts, this interactive report—was built through Claude Code. Four learning designers, moving fast, iterating on prompts and criteria in real time.
+
+That's the part that keeps hitting me. The barrier isn't technical skill anymore. It's knowing what questions to ask and how to structure the problem. The building part has become a conversation. And that changes who gets to do this kind of work.
+
+## Status
+
+Part of ongoing work for a chapter in *The Pedagogical Promptbook*. More coming: how we designed the mentor prompt, and the surprisingly hard problem of getting synthetic learners to make authentic mistakes.
