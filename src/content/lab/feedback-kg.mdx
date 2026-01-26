@@ -1,0 +1,52 @@
+---
+title: "Feedback Knowledge Graph"
+description: "A hands-on exploration of building knowledge graphs for education—what they are, how to construct them, and what they make possible."
+status: "experiment"
+embedType: "link"
+embedUrl: "https://feedback-knowledge-graph.vercel.app/"
+image: "/images/lab/feedback-kg.png"
+date: 2026-01-26
+topics: ["knowledge graphs", "learning", "AI", "prototyping"]
+---
+
+## The Question
+
+Knowledge graphs are having a moment in education. They show up in pitches, papers, and product roadmaps. But when you try to understand what they actually *are*—how you'd build one, what decisions you'd make, what it enables—things get fuzzy fast.
+
+I wanted to work through that fuzziness myself. Not by reading about knowledge graphs, but by building one from scratch and documenting the process.
+
+## The Approach
+
+The design challenge: take a narrow topic and define a graph that could serve as the underlying architecture for AI-powered learning. The topic needed to be accessible (so the structure would be legible to non-experts), well-documented (so I had source material to work from), and something I could act as subject matter expert on.
+
+I landed on **giving feedback**, specifically Harvard Project Zero's [Ladder of Feedback](https://pz.harvard.edu/resources/ladder-of-feedback) framework. But the point isn't feedback—it's that this process could apply to any bounded domain. The Ladder just gave me a clean test case.
+
+What followed was hours of conversation with Claude and Gemini, examining every decision: What are the node types? What properties does each node need? Where do you draw the line between one learning component and another? What counts as a prerequisite versus something that merely helps? How do you model a misconception—as an annotation, or as a first-class node with its own relationships?
+
+The graph currently has 41 nodes and 60 edges. But the artifact matters less than the reasoning that shaped it.
+
+## What's Here
+
+The demo has three parts:
+
+**Explore** — The graph itself, visualized. You can see the structure: 4 skills, 18 learning components, 18 misconceptions. Filter by type, trace relationships, click through connections. This is the architecture made visible.
+
+**Learn** — An AI tutor grounded in the graph. This shows what the graph *enables*: targeted explanations, diagnostic traversal ("you're stuck on X—let's check if misconception Y is in the way"), and recommendations that follow the prerequisite structure.
+
+**Practice** — Scenario-based exercises where your feedback is evaluated against the graph's learning components. Another demonstration of utility: the graph provides the rubric.
+
+The tutor and practice modes are functional, but they're not the point. They're proof that the graph can do work—that the structure isn't just documentation, it's a reasoning substrate.
+
+## What I'm Learning
+
+**Node granularity is hard.** When is something one skill versus two? The answer isn't in the source material—it emerges from asking: Could you teach this in isolation? Does it have a distinct failure mode? Would you ever give feedback on one without the other? These questions forced precision.
+
+**Misconceptions deserve their own nodes.** Research on conceptual change (Posner et al.) treats misconceptions as durable beliefs that must be specifically addressed—not just absence of correct knowledge. Modeling them as explicit nodes with `blocks` relationships transforms the graph from "what to teach" to "what's in the way."
+
+**The protocol isn't the curriculum.** The Ladder of Feedback prescribes an order for *doing* feedback. But you can *learn* the skills in any sequence. This distinction required two relationship types: hard prerequisites (rare—only 3 in the graph) versus softer "supports" relationships.
+
+**Building with AI is a dialogue.** Every node and edge was examined in conversation—proposing, questioning, refining. The AI helped surface edge cases and inconsistencies. But the decisions were mine. The graph reflects human judgment about what matters pedagogically.
+
+## Status
+
+Work in progress. The graph has good coverage of the Ladder of Feedback model itself, but giving feedback doesn't happen in a vacuum—there are adjacent skills and contextual factors that shape how it plays out. The current graph doesn't capture those yet. And even though the Learn and Practice tools aren't the main point, improving them helps demonstrate what a well-structured graph makes possible. The project has a way of pulling you forward.
