@@ -1,0 +1,45 @@
+---
+title: "Synthetic Learner Generator"
+description: "A tool for generating realistic synthetic learner personas to stress-test AI tutoring systems against the diversity of real students."
+status: "experiment"
+embedType: "link"
+embedUrl: "https://synthetic-learner-generator.vercel.app/"
+image: "/images/lab/synthetic-learner-generator.png"
+date: 2026-02-08
+topics: ["AI", "learning", "evaluation", "prototyping", "synthetic data"]
+---
+
+## The Question
+
+How do you know if your AI tutor can actually handle real students?
+
+Most AI tutors are tested by the people who built them—adults with strong metacognition, clear communication, and correct domain knowledge. But real learners are messy. They hold misconceptions with confidence. They go quiet when confused. They demand answers instead of engaging with scaffolding. They have strong conceptual understanding masked by language barriers.
+
+If you only test against yourself, you're not testing at all. You're confirming what you already expect.
+
+## What This Does
+
+The Synthetic Learner Generator creates configurable learner personas across four dimensions grounded in learning science research:
+
+- **Knowledge State** — Domain, topic, partial understanding, misconceptions, prerequisite gaps
+- **Cognitive Profile** — Prior knowledge depth, working memory capacity, metacognitive awareness, learning preferences
+- **Motivation & Affect** — Engagement level, self-efficacy, goal orientation, frustration threshold
+- **Communication Style** — Verbosity, help-seeking behavior, response to being wrong, language register
+
+These dimensions compile into a behavioral system prompt—deterministically, with no LLM call. The compilation resolves trait tensions at build time (what happens when a learner is both anxious *and* verbose?), calibrates inner monologue depth to metacognitive awareness, and includes escape valves that prevent extreme traits from making a learner completely unresponsive.
+
+Seven research-grounded archetypes provide starting points: the **Confident but Wrong** student who argues when corrected, the **Silent Struggler** who won't volunteer confusion, the **Grade Optimizer** who just wants the answer, the **Eager Novice** who asks everything, the **Capable but Disengaged** student who tests boundaries, the **Anxious Perfectionist** who freezes or spirals, and the **ESL Learner** whose understanding outpaces their expression.
+
+You can chat directly with any generated learner, run automated tutor-learner simulations, or export the system prompt and drop it into whatever tool you're building.
+
+## What I'm Learning
+
+**Trait interaction is the hard problem.** Individual dimensions are straightforward to define. But learners aren't a bag of independent traits—they're coherent people. A student who is both high-confidence and low-metacognition behaves differently from one who is high-confidence and high-metacognition. The trait resolver module forced me to think through dozens of these interactions explicitly, which turned out to be a form of learning design in itself.
+
+**Misconceptions need to be first-class citizens.** Early versions let the LLM "self-correct" too easily—the synthetic learner would hold a misconception for one turn, then magically fix it. Research on conceptual change (Posner et al.) is clear: misconceptions are durable beliefs, not gaps. They need to be used authentically, resisted when challenged, and released gradually. Getting this right required specific prompt engineering: a hyper-accuracy guard that prevents the LLM from being smarter than the student it's playing.
+
+**The personas reveal your tutor's assumptions.** The most valuable moment isn't generating the learner—it's watching your tutor fail against one. A tutor that works beautifully with the Eager Novice might completely break down with the Silent Struggler. That pattern mismatch is the diagnostic. The synthetic learner doesn't just test the tutor; it shows you what kind of student your tutor was *actually* designed for.
+
+## Status
+
+Core tool is complete and functional. Exploring integration with structured knowledge graphs to ground learner misconceptions in specific domain models rather than freeform descriptions—connecting what a learner gets wrong to *why* they get it wrong at a structural level.
