@@ -11,11 +11,13 @@ topics: ["AI", "learning", "evaluation", "prototyping", "synthetic data"]
 
 ## The Question
 
-How do you know if your AI tutor can actually handle real students?
+How do you know if your AI tutor will perform reliably across a wide range of learners and interactions?
 
-Most AI tutors are tested by the people who built them—adults with strong metacognition, clear communication, and correct domain knowledge. But real learners are messy. They hold misconceptions with confidence. They go quiet when confused. They demand answers instead of engaging with scaffolding. They have strong conceptual understanding masked by language barriers.
+Testing AI prompts and agents isn't a one-and-done thing. It's probabilistic—your tutor may perform differently even in multiple identical interactions with the same user. It will certainly vary across learners who hold misconceptions with confidence, go quiet when confused, demand answers instead of engaging with scaffolding, or have strong conceptual understanding masked by language barriers.
 
-If you only test against yourself, you're not testing at all. You're confirming what you already expect.
+Using real learners to test is time-consuming and expensive. But rigorous evaluation is essential before putting your product in front of actual students. The question becomes: how do you generate the diversity of learner interactions you need to test against, without waiting for real users to find the failures for you?
+
+This experiment grew out of work I did with <a href="https://www.linkedin.com/in/janine-agarwal/" target="_blank" rel="noopener noreferrer">Janine Agarwal</a>, <a href="https://www.linkedin.com/in/anna-hadjiyiannis/" target="_blank" rel="noopener noreferrer">Anna Hadjiyiannis</a>, and <a href="https://www.linkedin.com/in/nthatomoagi/" target="_blank" rel="noopener noreferrer">Nthato Gift Moagi</a> for a chapter in <a href="https://thepromptbook.org" target="_blank" rel="noopener noreferrer">The Pedagogical Promptbook</a> (see the <a href="/lab/llm-as-judge">LLM as Judge</a> experiment). We built synthetic learners to evaluate our AI tutor and I wanted to see if I could turn that process into a tool that makes it easy for educators, designers, and technologists to generate research-grounded synthetic learners on their own.
 
 ## What This Does
 
@@ -26,7 +28,7 @@ The Synthetic Learner Generator creates configurable learner personas across fou
 - **Motivation & Affect** — Engagement level, self-efficacy, goal orientation, frustration threshold
 - **Communication Style** — Verbosity, help-seeking behavior, response to being wrong, language register
 
-These dimensions compile into a behavioral system prompt—deterministically, with no LLM call. The compilation resolves trait tensions at build time (what happens when a learner is both anxious *and* verbose?), calibrates inner monologue depth to metacognitive awareness, and includes escape valves that prevent extreme traits from making a learner completely unresponsive.
+These dimensions compile into a behavioral system prompt.
 
 Seven research-grounded archetypes provide starting points: the **Confident but Wrong** student who argues when corrected, the **Silent Struggler** who won't volunteer confusion, the **Grade Optimizer** who just wants the answer, the **Eager Novice** who asks everything, the **Capable but Disengaged** student who tests boundaries, the **Anxious Perfectionist** who freezes or spirals, and the **ESL Learner** whose understanding outpaces their expression.
 
@@ -34,11 +36,11 @@ You can chat directly with any generated learner, run automated tutor-learner si
 
 ## What I'm Learning
 
-**Trait interaction is the hard problem.** Individual dimensions are straightforward to define. But learners aren't a bag of independent traits—they're coherent people. A student who is both high-confidence and low-metacognition behaves differently from one who is high-confidence and high-metacognition. The trait resolver module forced me to think through dozens of these interactions explicitly, which turned out to be a form of learning design in itself.
+**Making the thinking visible changes everything.** The generated persona prompts ask the LLM to reason in character before responding—working through the learner's actual thought process, including their confusion, before producing what they'd say out loud. In the demo, this inner monologue stays behind the scenes, shaping more authentic responses. But you can surface it—and when we did this in our Pedagogical Promptbook work, it became a valuable review tool. You can read the reasoning and ask: does this sound like a real student thinking through this problem?
 
-**Misconceptions need to be first-class citizens.** Early versions let the LLM "self-correct" too easily—the synthetic learner would hold a misconception for one turn, then magically fix it. Research on conceptual change (Posner et al.) is clear: misconceptions are durable beliefs, not gaps. They need to be used authentically, resisted when challenged, and released gradually. Getting this right required specific prompt engineering: a hyper-accuracy guard that prevents the LLM from being smarter than the student it's playing.
+**LLMs don't want to be wrong.** This is the fundamental tension in building synthetic learners. Language models are trained to be helpful and accurate—which is exactly the opposite of what you need from a student who holds a confident misconception. Early versions would "hold" a misconception for one turn, then quietly self-correct. Getting past this required reframing the LLM's core role: making mistakes isn't a failure mode, it's the *entire point*. The prompt has to make clear that authentic, durable wrongness is what success looks like.
 
-**The personas reveal your tutor's assumptions.** The most valuable moment isn't generating the learner—it's watching your tutor fail against one. A tutor that works beautifully with the Eager Novice might completely break down with the Silent Struggler. That pattern mismatch is the diagnostic. The synthetic learner doesn't just test the tutor; it shows you what kind of student your tutor was *actually* designed for.
+**The hard test isn't the eager learner.** It's tempting to validate your tutor against a student who asks great questions and engages enthusiastically—and satisfying when it works. But the real stress test is the Silent Struggler who won't volunteer what they don't understand, or the Capable but Disengaged student who gives you one-word answers. A tutor that shines with the Eager Novice might completely fall apart when a learner won't meet it halfway. That's the diagnostic. The synthetic learner doesn't just test whether your tutor works—it shows you which *kind* of student it was actually designed for.
 
 ## Status
 
