@@ -60,7 +60,7 @@ Of course, the AI already has ideas about how to teach. It's trained on pedagogi
 
 The design challenge isn't to encode best practices. It's to create conditions where effective teaching strategies can emerge through variation, testing, and iteration, optimized for outcomes rather than intuitions.
 
-I'll develop both challenges in depth in subsequent essays. But the shape of the new work is this: the learning designer designs the conditions under which the AI can learn both what winning looks like and how to produce it.
+I'll develop both challenges in depth in subsequent essays, starting with [the win condition problem](/thinking/the-win-condition-problem). But the shape of the new work is this: the learning designer designs the conditions under which the AI can learn both what winning looks like and how to produce it.
 
 You're still designing learning experiences. You're just designing them for a different kind of learner.
 
