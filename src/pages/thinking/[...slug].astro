@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -60,6 +61,8 @@ const readingTime = Math.ceil(wordCount / wordsPerMinute);
           </a>
         ))}
       </div>
+
+      <NewsletterSignup />
     </footer>
   </article>
 </Base>

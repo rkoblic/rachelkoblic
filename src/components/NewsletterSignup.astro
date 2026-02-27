@@ -1,0 +1,56 @@
+---
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+
+// Replace with your Buttondown username after creating an account
+const buttondownUsername = 'rkoblic';
+const formAction = `https://buttondown.com/api/emails/embed-subscribe/${buttondownUsername}`;
+---
+
+{compact ? (
+  <div class="newsletter-compact">
+    <form action={formAction} method="post" target="_blank" class="flex items-center gap-4 max-sm:flex-col max-sm:items-start max-sm:gap-3">
+      <label for="email-footer" class="text-sm text-[--color-text-tertiary] whitespace-nowrap">Follow the thinking</label>
+      <div class="flex gap-2">
+        <input
+          type="email"
+          name="email"
+          id="email-footer"
+          placeholder="your@email.com"
+          required
+          class="text-sm px-3 py-1.5 rounded border border-[#E8E2DB] bg-[--color-bg-main] text-[--color-text-primary] placeholder:text-[--color-text-muted] outline-none focus:border-[#0D9488] transition-colors w-52"
+        />
+        <button
+          type="submit"
+          class="text-sm px-3 py-1.5 rounded bg-[#0D9488] text-[#FFFDFB] hover:bg-[#0B7C72] transition-colors cursor-pointer"
+        >
+          Subscribe
+        </button>
+      </div>
+    </form>
+  </div>
+) : (
+  <div class="newsletter-full mt-12 pt-10 border-t border-[#F0EAE3]">
+    <h3 class="text-xl text-[--color-text-primary] mb-2">Follow the thinking</h3>
+    <p class="text-sm text-[--color-text-tertiary] mb-5">New essays and notes, straight to your inbox. No spam, no noise.</p>
+    <form action={formAction} method="post" target="_blank" class="flex gap-2 max-sm:flex-col">
+      <input
+        type="email"
+        name="email"
+        id="email-article"
+        placeholder="your@email.com"
+        required
+        class="text-sm px-4 py-2.5 rounded border border-[#E8E2DB] bg-[--color-bg-main] text-[--color-text-primary] placeholder:text-[--color-text-muted] outline-none focus:border-[#0D9488] transition-colors flex-1 max-w-xs"
+      />
+      <button
+        type="submit"
+        class="text-sm px-5 py-2.5 rounded bg-[#0D9488] text-[#FFFDFB] hover:bg-[#0B7C72] transition-colors cursor-pointer"
+      >
+        Subscribe
+      </button>
+    </form>
+  </div>
+)}

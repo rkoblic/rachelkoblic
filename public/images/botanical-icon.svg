@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Background circle -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5EDE4" />
+      <stop offset="100%" stop-color="#FAF6F1" />
+    </linearGradient>
+  </defs>
+  <circle cx="200" cy="200" r="190" fill="url(#bg)" />
+
+  <!-- Botanical graph (centered and scaled) -->
+  <g transform="translate(15.5, 0.2) scale(1.8)" opacity="0.6" fill="none">
+    <!-- Main stem -->
+    <path d="M100 180 C100 150 95 120 100 100" stroke="#5A524A" stroke-width="1.5" stroke-linecap="round" />
+
+    <!-- Branches -->
+    <path d="M100 140 C80 130 60 135 45 120" stroke="#5A524A" stroke-width="1.2" stroke-linecap="round" />
+    <path d="M100 140 C120 130 145 130 160 115" stroke="#5A524A" stroke-width="1.2" stroke-linecap="round" />
+    <path d="M100 100 C85 85 70 80 50 70" stroke="#8B7E71" stroke-width="1" stroke-linecap="round" />
+    <path d="M100 100 C115 85 135 75 155 65" stroke="#8B7E71" stroke-width="1" stroke-linecap="round" />
+    <path d="M100 100 C100 80 100 60 100 40" stroke="#8B7E71" stroke-width="1" stroke-linecap="round" />
+
+    <!-- Secondary twigs -->
+    <path d="M45 120 C35 110 30 95 35 80" stroke="#A89F94" stroke-width="0.8" stroke-linecap="round" />
+    <path d="M160 115 C170 100 175 85 170 70" stroke="#A89F94" stroke-width="0.8" stroke-linecap="round" />
+
+    <!-- Nodes -->
+    <circle cx="100" cy="180" r="4" stroke="#5A524A" stroke-width="1.5" />
+    <circle cx="100" cy="140" r="3" stroke="#5A524A" stroke-width="1.2" />
+    <circle cx="100" cy="100" r="4" stroke="#0D9488" stroke-width="2" />
+    <circle cx="45" cy="120" r="3" stroke="#0D9488" stroke-width="1.5" />
+    <circle cx="160" cy="115" r="3" stroke="#0D9488" stroke-width="1.5" />
+    <circle cx="50" cy="70" r="2.5" stroke="#8B7E71" stroke-width="1" />
+    <circle cx="155" cy="65" r="2.5" stroke="#8B7E71" stroke-width="1" />
+    <circle cx="100" cy="40" r="3" stroke="#5A524A" stroke-width="1.2" />
+    <circle cx="35" cy="80" r="2" stroke="#A89F94" stroke-width="1" />
+    <circle cx="170" cy="70" r="2" stroke="#A89F94" stroke-width="1" />
+
+    <!-- Small accent dots -->
+    <circle cx="75" cy="110" r="1.5" fill="#A89F94" />
+    <circle cx="125" cy="108" r="1.5" fill="#A89F94" />
+    <circle cx="90" cy="70" r="1.5" fill="#0D9488" />
+  </g>
+</svg>
