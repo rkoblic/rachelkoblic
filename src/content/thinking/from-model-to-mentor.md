@@ -40,4 +40,4 @@ Most conversations about "AI in education" still treat the LLM as a content-deli
 
 The core argument of our chapter is that **process fidelity has to come before outcome claims**. Before we ask whether an AI tutor improves learning, we need to know whether it's actually *doing the teaching* we claim it's doing. That's what fidelity-based evaluation makes possible—and what turns a prompt from a demo into a deployable pedagogical artifact.
 
-The mentor stumbled exactly where human teachers stumble—fading support, showing real uncertainty, letting learners sit with difficulty. We didn't set out to demonstrate that. It's the finding that's stayed with me.
+From model to mentor, from answer machine to practice-bearing tool. That's the challenge, should we choose to accept it.
