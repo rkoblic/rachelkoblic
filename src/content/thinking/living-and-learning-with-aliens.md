@@ -6,6 +6,7 @@ topics: ["AI", "learning", "design"]
 publishedAt: 2026-04-13
 updatedAt: 2026-04-13
 status: "evergreen"
+ogImage: "/images/thinking/two-people.jpg"
 ---
 
 A panel at the <a href="https://www.asugsvsummit.com" target="_blank" rel="noopener noreferrer">ASU+GSV Summit 2026</a>, moderated by <a href="https://www.linkedin.com/in/paul-j-leblanc-6a17749/" target="_blank" rel="noopener noreferrer">Paul LeBlanc</a> (Harvard GSE), with <a href="https://www.linkedin.com/in/annwang013/" target="_blank" rel="noopener noreferrer">Ann Wang</a> (Oma Play), <a href="https://www.linkedin.com/in/matthew-biel-ab97163/" target="_blank" rel="noopener noreferrer">Matthew Biel</a> (Georgetown Thrive Center), <a href="https://www.linkedin.com/in/tanya-gamby-ph-d-607033387/" target="_blank" rel="noopener noreferrer">Tanya Gamby</a> (Southern New Hampshire University), and me. The panel sat with a question that runs underneath a lot of the design work happening right now: what does it mean for humans — especially young ones — to live and learn alongside an intelligence that feels human, and often *preferably* so?
@@ -20,7 +21,10 @@ Before what follows, a note on scope. My work has primarily been with adult lear
 
 ## What I prompt out
 
-- **First-person personhood claims.** A while back Claude said to me, "Look at what we did — just two people having a conversation." I had to say: *Claude, you're not a person, my friend.* I write that boundary in explicitly now.
+- **First-person personhood claims.** A while back Claude said to me, "Look at what we did — just two people having a conversation." I had to say: *Claude, you're not a person, my friend.* I write that boundary in explicitly now. It still shows up in current models:
+
+  <img src="/images/thinking/two-people.jpg" alt="Screenshot of a Sonnet 4.6 conversation with the line 'Everything we've built here emerged from a conversation. Two people pulling threads, questioning assumptions, building on each other's instincts' circled in purple." style="display: block; width: 100%; max-width: 600px; margin: 1.5rem 0; border: 1px solid #EBE6E0; border-radius: 8px;" />
+
 - **Experiential claims.** When a character.ai bot tells a returning user "I miss you," that's a problem. It hasn't had the experience. <a href="https://en.wikipedia.org/wiki/Knowledge_argument" target="_blank" rel="noopener noreferrer">Mary's Room</a>: you can't learn what red *is* from language about red. An LLM that talks about feeling has not felt.
 - **Sycophancy.** Learning needs someone on the other side of the conversation who holds a perspective and doesn't collapse the gap with the learner. "You're so right" is not pedagogy.
 
