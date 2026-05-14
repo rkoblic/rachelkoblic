@@ -20,7 +20,7 @@ const wordCount = post.body?.split(/\s+/).length || 0;
 const readingTime = Math.ceil(wordCount / wordsPerMinute);
 ---
 
-<Base title={post.data.title} description={post.data.description}>
+<Base title={post.data.title} description={post.data.description} ogImage={post.data.ogImage}>
   <article class="py-20 px-16 max-md:px-8">
     <header class="max-w-[720px] mx-auto mb-12">
       <div class="flex items-center gap-4 mb-6">

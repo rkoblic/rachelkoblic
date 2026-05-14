@@ -10,6 +10,7 @@ const thinking = defineCollection({
     publishedAt: z.date(),
     updatedAt: z.date(),
     status: z.enum(['draft', 'growing', 'evergreen']).optional(),
+    ogImage: z.string().optional(),
   }),
 });
 
