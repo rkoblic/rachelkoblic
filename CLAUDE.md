@@ -56,6 +56,7 @@ topics: ["AI", "learning", "higher education", "design", "work"]  # Use only the
 publishedAt: 2026-01-14
 updatedAt: 2026-01-14
 status: "draft" | "growing" | "evergreen"
+ogImage: "/images/thinking/filename.jpg"  # Optional. Overrides site-default social share card.
 ---
 ```
 
@@ -201,7 +202,7 @@ Example: "logic layer" → tooltip: "The structures that make learning legible t
 
 ## Key Conventions
 
-1. **Lab images**: Store in `/public/images/lab/`, reference as `/images/lab/filename.png`
+1. **Post images**: Store in `/public/images/lab/` or `/public/images/thinking/`, reference as `/images/{section}/filename.png`
 2. **Homepage sections**: Pull dynamically from collections (3 recent thinking, 2 recent lab)
 3. **Prose styles**: Defined locally in `[...slug].astro` files for thinking and lab
 4. **Links**: Use teal accent color (#0D9488) for interactive elements
