@@ -7,7 +7,7 @@ export async function GET(context) {
 
   return rss({
     title: 'Rachel Koblic',
-    description: 'Designing the Logic Layer for AI-Era Learning. Essays and notes on knowledge graphs, curriculum design, and the future of education.',
+    description: 'Designing Human-Centered, AI-Forward Learning Systems. Essays and notes on knowledge graphs, curriculum design, and the future of education.',
     site: context.site || 'https://rachelkoblic.com',
     items: sortedPosts.map((post) => ({
       title: post.data.title,
