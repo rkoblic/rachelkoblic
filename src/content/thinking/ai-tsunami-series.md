@@ -4,7 +4,7 @@ description: "A six-part series exploring how higher education must transform in
 type: "essay"
 topics: ["AI", "higher education", "learning"]
 publishedAt: 2025-09-18
-updatedAt: 2026-01-07
+updatedAt: 2026-07-24
 status: "evergreen"
 ---
 
@@ -32,6 +32,10 @@ Moving beyond personalization as content branching toward precision learning—a
 
 If AI can deliver content and answer questions, what remains uniquely human about the university? A call for institutions to rediscover their purpose.
 
-**Part 5** — Coming soon
+**<a href="https://er.educause.edu/articles/2026/3/the-role-of-faculty-in-the-university-of-the-future" target="_blank" rel="noopener noreferrer">Part 5: The Role of Faculty in the University of the Future</a>** — March 2026
 
-**Part 6** — Coming soon
+What remains for faculty when AI can teach? The case that faculty matter more, not less, once they are freed to focus on mentorship and the higher-order work machines cannot do.
+
+**<a href="https://er.educause.edu/articles/2026/6/the-current-state-of-play-ai-in-higher-education-and-the-road-ahead" target="_blank" rel="noopener noreferrer">Part 6: The Current State of Play</a>** — June 2026
+
+Closing the series with a look at where AI in higher education actually stands today. After five articles about what's possible, this one turns to present reality and the road ahead.
