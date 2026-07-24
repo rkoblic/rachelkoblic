@@ -1,0 +1,43 @@
+---
+title: "AI-Ready Teaching Stack"
+description: "An interactive prototype tying together a knowledge graph, a tool-using tutoring agent, and a live evidence map—the working version of the ideas behind the Marshall talk."
+status: "experiment"
+embedType: "link"
+embedUrl: "https://learning-system-demo-six.vercel.app/"
+date: 2026-07-24
+topics: ["AI", "learning", "assessment", "knowledge graphs", "agents"]
+---
+
+## The Question
+
+What does it actually take to make a subject teachable by an AI, rather than just answerable?
+
+Most AI-in-education demos stop at the chat window. But a model on its own doesn't know what it's teaching, what mastery looks like, or what a given learner already understands. That knowledge has to live somewhere the agent can read and write to. This prototype is my attempt to build that scaffolding and make it visible—to show the whole stack working at once instead of describing it. It's the working version of the ideas in <a href="/thinking/designing-for-the-machine-learner">Designing for the Machine Learner</a> and <a href="/thinking/the-win-condition-problem">The Win Condition Problem</a>, and the prototype I demoed at the <a href="/thinking/teaching-the-machine-to-teach">Marshall University Cabinet Retreat</a>.
+
+## What This Does
+
+The demo runs three connected panels side by side:
+
+- **Knowledge Graph** — A curriculum rendered as a force-directed graph of concepts and their relationships. Nodes change color as the agent assesses them, so you watch understanding get mapped in real time.
+- **Conversation** — The agent talks with a learner in the center. An expandable panel shows its tool calls as they happen, so the reasoning isn't hidden behind the reply.
+- **Evidence Map** — A structured record of what the learner knows, sorted into assessed, in progress, and not yet assessed. This is the win-condition idea made concrete: evidence at each node instead of a single score.
+
+You can drive it three ways. **Play as learner** and answer the questions yourself, watch a **simulated learner** respond turn by turn, or run **demo mode** with a pre-scripted conversation and no API calls.
+
+The same curriculum can be assessed by three different agents, each a proper tool-using agent with the same six tools but a different philosophy:
+
+- **Diagnostician** — Pure assessment. Asks precise questions, maps understanding, never teaches.
+- **Socratic Tutor** — Assesses and teaches at once through guided inquiry, using productive failure.
+- **Direct Instructor** — Finds the gap, explains it directly, verifies, and moves on.
+
+An "Under the Hood" view exposes the system prompts, tool definitions, and graph JSON, and you can upload your own curriculum as a JSON graph to assess any subject.
+
+## What I'm Learning
+
+**The graph is the product, not the chat.** The conversation is the part everyone looks at, but the value accrues in the evidence map. A single score tells you a learner got a 78. An evidence-rich record tells you which concepts they hold, which they've confused, and what to teach next. Putting the two side by side, with a "compare to traditional score" view, makes that difference hard to unsee.
+
+**Making the tool calls visible changes how people react.** When the agent's `update_node_status` and `set_focus_node` calls scroll past in real time, the system stops feeling like a black box and starts feeling like something you could inspect, contest, and improve. That legibility is the whole point of building the harness this way.
+
+## Status
+
+Working prototype, built for live demos and hands-on exploration. It's rate-limited and turn-capped to keep costs bounded, and it accepts custom graphs so you can point it at your own curriculum. Next I want to connect the evidence map more tightly to the graph structure, so what a learner gets wrong links back to *why* at a structural level—the same thread I'm pulling in the <a href="/lab/synthetic-learner-generator">Synthetic Learner Generator</a>.
